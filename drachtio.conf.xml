@@ -1,0 +1,28 @@
+<drachtio>
+  <admin port="9022" secret="cymru">webrtc.shielder.com.br</admin>
+
+  <!-- Configurando um sip-profile para WSS -->
+    <!-- Se estiver atrás de NAT, coloque aqui seu IP público ou domínio -->
+<sip>
+    <!-- Habilite wss como transporte -->
+    <contacts>
+            <contact external-ip="185.252.235.116">sip:*;transport=udp,tcp</contact>
+            <contact external-ip="185.252.235.116">sips:*:7443;transport=wss</contact>
+    </contacts>
+
+        <!-- Tamanho máximo de mensagem WebSocket (opcional) -->
+        <!-- <ws-max-message-size>65535</ws-max-message-size> -->
+
+    <!-- Configuração TLS (precisa para WSS) -->
+    <tls>
+        <key-file>/etc/letsencrypt/live/webrtc.shielder.com.br/privkey.pem</key-file>
+        <cert-file>/etc/letsencrypt/live/webrtc.shielder.com.br/cert.pem</cert-file>
+        <chain-file>/etc/letsencrypt/live/webrtc.shielder.com.br/chain.pem</chain-file>
+    </tls>
+  </sip>
+  <logging>
+        <loglevel>debug</loglevel>
+    <sofia-loglevel>9</sofia-loglevel>
+</logging>
+
+</drachtio>

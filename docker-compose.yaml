@@ -1,0 +1,60 @@
+version: '3'
+
+networks:
+  drachtio-basic-registrar:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.38.0.0/16
+
+services:
+  drachtio:
+    image: drachtio/drachtio-server:latest
+    command: drachtio --contact "sip:*;transport=udp,tcp" --loglevel debug --sofia-loglevel 9
+    container_name: drachtio
+    ports:
+      - "5060:5060/udp"
+      - "5060:5060/tcp"   # Adicione TCP se necessário
+      - "9022:9022/tcp"
+    networks:
+      drachtio-basic-registrar:
+        ipv4_address: 172.38.0.10
+
+  rtpengine:
+    image: drachtio/rtpengine:mr7.1
+    command: >
+      rtpengine 
+      --interface=172.38.0.11!185.252.235.116
+      --port-min 30000 
+      --port-max 30100 
+      --log-level 7
+    container_name: rtpengine
+    ports:
+      - "22222:22222/udp"
+      - "30000-30100:30000-30100/udp"
+    networks:
+      drachtio-basic-registrar:
+        ipv4_address: 172.38.0.11
+  
+  redis:
+    image: redis
+    container_name: redis
+    ports:
+      - "6379:6379/tcp"
+    networks:
+      drachtio-basic-registrar:
+        ipv4_address: 172.38.0.13
+  app:
+    build: .
+    container_name: sip-registrar
+    depends_on:
+      - drachtio
+      - rtpengine
+      - redis
+    environment:
+      DRACHTIO_HOST: drachtio
+      DRACHTIO_PORT: 9022
+      DRACHTIO_SECRET: cymru
+    networks:
+      - drachtio-basic-registrar
+

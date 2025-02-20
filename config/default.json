@@ -1,23 +1,23 @@
 {
   "drachtio": {
-    "host": "127.0.0.1",
+    "host": "drachtio",
     "port": 9022,
     "secret": "cymru"
   },
   "rtpengine": {
-    "host": "127.0.0.1",
+    "host": "rtpengine",
     "port": 22222
   },
   "redis" : {
-    "address": "127.0.0.1",
+    "address": "redis",
     "port": 6379
   },
   "logging": {
-    "level": "info"
+    "level": "debug"
   },
   "domains": [
     {
-      "name": "a.domain.com",
+      "name": "185.252.235.116",
       "users": [
         {
           "username": "123",
@@ -26,6 +26,10 @@
         },
         {
           "username": "456",
+          "password": "bar"
+        },
+        {
+          "username": "987",
           "password": "bar"
         },
         {

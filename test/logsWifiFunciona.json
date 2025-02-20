@@ -1,0 +1,14 @@
+{"level":30,"time":1740071513729,"pid":17,"hostname":"16ef22b04c5b","Call-ID":"154nfRFydPgJ-IkEmSiQaA..","family":"ipv4","scheme":"sip","user":"789","host":"185.252.235.116","port":null,"params":{"transport":"UDP"},"headers":{},"msg":"received INVITE from udp/45.161.30.115:14156"}
+{"level":30,"time":1740071513748,"pid":17,"hostname":"16ef22b04c5b","msg":"Registrar#query: sip:789@185.252.235.116;transport=UDP returned {\"contact\":\"sip:789@45.161.30.115:14730\",\"protocol\":\"udp\"}"}
+{"level":30,"time":1740071513748,"pid":17,"hostname":"16ef22b04c5b","Call-ID":"154nfRFydPgJ-IkEmSiQaA..","msg":"call to a registered sip client at uri sip:789@45.161.30.115:14730"}
+{"level":30,"time":1740071513843,"pid":17,"hostname":"16ef22b04c5b","msg":"received REGISTER from udp/45.161.30.115:14730"}
+{"level":30,"time":1740071513843,"pid":17,"hostname":"16ef22b04c5b","type":"register","expires":60,"contact":[{"uri":"sip:789@45.161.30.115:14730;transport=UDP;rinstance=5301427b7bebd62a","params":{}}],"aor":"sip:789@185.252.235.116;transport=UDP","msg":"registration details"}
+{"level":30,"time":1740071513843,"pid":17,"hostname":"16ef22b04c5b","msg":"Registrar#add sip:789@185.252.235.116;transport=UDP from udp/sip:789@45.161.30.115:14730 for 30"}
+{"level":30,"time":1740071513880,"pid":17,"hostname":"16ef22b04c5b","msg":"Registrar#add - result of adding sip:789@185.252.235.116;transport=UDP: OK,1"}
+{"level":20,"time":1740071522100,"pid":17,"hostname":"16ef22b04c5b","Call-ID":"154nfRFydPgJ-IkEmSiQaA..","msg":"rtpengine#answer returned {\"sdp\":\"v=0\\r\\no=Z 0 708540026 IN IP4 45.161.30.115\\r\\ns=Z\\r\\nc=IN IP4 172.38.0.11\\r\\nt=0 0\\r\\nm=audio 30054 RTP/AVP 3 106 9 0 8 101 98\\r\\na=rtpmap:3 GSM/8000\\r\\na=rtpmap:106 opus/48000/2\\r\\na=rtpmap:9 G722/8000\\r\\na=rtpmap:0 PCMU/8000\\r\\na=rtpmap:8 PCMA/8000\\r\\na=rtpmap:101 telephone-event/8000\\r\\na=rtpmap:98 telephone-event/48000\\r\\na=fmtp:106 sprop-maxcapturerate=16000; minptime=20; useinbandfec=1\\r\\na=fmtp:101 0-16\\r\\na=fmtp:98 0-16\\r\\na=sendrecv\\r\\na=rtcp:30054\\r\\na=rtcp-mux\\r\\n\",\"result\":\"ok\"}"}
+{"level":30,"time":1740071522111,"pid":17,"hostname":"16ef22b04c5b","Call-ID":"154nfRFydPgJ-IkEmSiQaA..","msg":"call successfully connected"}
+{"level":30,"time":1740071523162,"pid":17,"hostname":"16ef22b04c5b","msg":"received REGISTER from udp/45.161.30.115:14156"}
+{"level":30,"time":1740071523163,"pid":17,"hostname":"16ef22b04c5b","type":"register","expires":60,"contact":[{"uri":"sip:987@45.161.30.115:14872;transport=UDP;rinstance=1d901d6cdd51dbf4","params":{}}],"aor":"sip:987@185.252.235.116;transport=UDP","msg":"registration details"}
+{"level":30,"time":1740071523164,"pid":17,"hostname":"16ef22b04c5b","msg":"Registrar#add sip:987@185.252.235.116;transport=UDP from udp/sip:987@45.161.30.115:14156 for 30"}
+{"level":30,"time":1740071523168,"pid":17,"hostname":"16ef22b04c5b","msg":"Registrar#add - result of adding sip:987@185.252.235.116;transport=UDP: OK,1"}
+
