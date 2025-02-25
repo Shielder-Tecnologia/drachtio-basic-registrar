@@ -1,13 +1,13 @@
 <drachtio>
-  <admin port="9022" secret="cymru">webrtc.shielder.com.br</admin>
+  <admin port="9022" secret="cymru">0.0.0.0</admin>
 
   <!-- Configurando um sip-profile para WSS -->
     <!-- Se estiver atrás de NAT, coloque aqui seu IP público ou domínio -->
 <sip>
     <!-- Habilite wss como transporte -->
     <contacts>
-            <contact external-ip="185.252.235.116">sip:*;transport=udp,tcp</contact>
-            <contact external-ip="185.252.235.116">sips:*:7443;transport=wss</contact>
+            <contact>sip:*;transport=udp,tcp</contact>
+            <contact>sips:*:7443;transport=wss</contact>
     </contacts>
 
         <!-- Tamanho máximo de mensagem WebSocket (opcional) -->

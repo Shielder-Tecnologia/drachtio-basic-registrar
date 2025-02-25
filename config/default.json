@@ -1,15 +1,15 @@
 {
   "drachtio": {
-    "host": "drachtio",
+    "host": "127.0.0.1",
     "port": 9022,
     "secret": "cymru"
   },
   "rtpengine": {
-    "host": "rtpengine",
+    "host": "127.0.0.1",
     "port": 22222
   },
   "redis" : {
-    "address": "redis",
+    "address": "127.0.0.1",
     "port": 6379
   },
   "logging": {
@@ -17,7 +17,7 @@
   },
   "domains": [
     {
-      "name": "185.252.235.116",
+      "name": "webrtc.shielder.com.br",
       "users": [
         {
           "username": "123",
@@ -31,6 +31,10 @@
         {
           "username": "987",
           "password": "bar"
+        },
+        {
+          "username": "777",
+          "password": "controlid"
         },
         {
           "username": "789",

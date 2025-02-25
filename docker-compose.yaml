@@ -10,12 +10,17 @@ networks:
 services:
   drachtio:
     image: drachtio/drachtio-server:latest
-    command: drachtio --contact "sip:*;transport=udp,tcp" --loglevel debug --sofia-loglevel 9
+    #command: drachtio --contact "sip:*;transport=udp,tcp" --loglevel debug --sofia-loglevel 9
+    
     container_name: drachtio
+    volumes:
+      - ./drachtio.conf.xml:/etc/drachtio.conf.xml:ro
+      - /etc/letsencrypt:/etc/letsencrypt:ro
     ports:
       - "5060:5060/udp"
       - "5060:5060/tcp"   # Adicione TCP se necessário
       - "9022:9022/tcp"
+      - "7443:7443/tcp"
     networks:
       drachtio-basic-registrar:
         ipv4_address: 172.38.0.10
@@ -44,17 +49,5 @@ services:
     networks:
       drachtio-basic-registrar:
         ipv4_address: 172.38.0.13
-  app:
-    build: .
-    container_name: sip-registrar
-    depends_on:
-      - drachtio
-      - rtpengine
-      - redis
-    environment:
-      DRACHTIO_HOST: drachtio
-      DRACHTIO_PORT: 9022
-      DRACHTIO_SECRET: cymru
-    networks:
-      - drachtio-basic-registrar
+ 
 
